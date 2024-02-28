@@ -1,4 +1,4 @@
-const {generateRandomNumber}
+const {generateRandomNumber} = require ('../utils/MathHelper.js')
 
 console.log(1);
 
@@ -34,8 +34,11 @@ for (i = 1 ; i <= num1; i++) {
     if(i % 2 !== 0) console.log (i) 
 }
 
-let num2 = Math.floor(Math.random() * (10) +1);
-let num3 = Math.floor(Math.random() * (10) +1);
+//let num2 = Math.floor(Math.random() * (10) +1);
+//let num3 = Math.floor(Math.random() * (10) +1);
+const {generateRandomNumber} = require ('../utils/MathHelper.js')
+let num2 = generateRandomNumber(1, 10);
+let num3 = generateRandomNumber(1, 10);
 let numMin = Math.min(num2, num3);
 let numMax = Math.max(num2, num3);
 for (i = numMin ; i <= numMax; i++) {
