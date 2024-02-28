@@ -24,3 +24,20 @@ function vowelCheck (string) {
    
 }
 (vowelCheck('Aeker'));
+
+
+
+function addSum(arr, target) {
+    for (i=0 ; i < arr.length; i++) {
+        for (j=0; j < arr.length ; j++) {
+            if (arr[i] + arr[j] == target )
+            return `${(arr[i])} + ${arr[j]} = ${target}`;
+        }
+        
+    }
+    return false;
+    }
+    console.log( addSum([19, 30, 5, 7,21], 26));
+    console.log( addSum([19, 30, 5, 7,2, 4], 34));
+    console.log( addSum([40, 30, 5, 7,2, 4], 12));
+    console.log( addSum([40, 3, 5, 7,2, 4], 52));
