@@ -1,47 +1,41 @@
-const {generateRandomNumber} = require ('../utils/MathHelper.js')
+// print 1, 2, 3, 4, 5, 6 ......
+/*
+for loop - i loop - traditional loop
 
-console.log(1);
-
-
-for (let i = 50 ; i >= 0 ; i-=10)
-console.log(i)
-
-for (let i = 100 ; i >= 0 ; i--) {
-    console.log(i)
+for(initialization; termination_condition; update) {
+    // code block
 }
+*/
 
-for (let i = 0 ; i <= 250 ;  i+=5) {
-     console.log(i/5);
-}
 
-for (let i = 0 ; i <= 10 ;  i++) {
-    console.log(i*5);
-}
-let output = 0;
-for (let i = 10 ; i <= 15 ; i++) {
-    output+= i;
-}
-console.log(output)
-let school = 'TechGlobal School';
-let count = 0;
-for (i = 0 ; i < school.length ; i++) {
-    if(school[i] === 'o') count+=1;
-}
-console.log(count)
-
-let num1 = Math.floor(Math.random() * (11) +10);
-for (i = 1 ; i <= num1; i++) {
-    if(i % 2 !== 0) console.log (i) 
-}
-
-//let num2 = Math.floor(Math.random() * (10) +1);
-//let num3 = Math.floor(Math.random() * (10) +1);
-const {generateRandomNumber} = require ('../utils/MathHelper.js')
-let num2 = generateRandomNumber(1, 10);
-let num3 = generateRandomNumber(1, 10);
-let numMin = Math.min(num2, num3);
-let numMax = Math.max(num2, num3);
-for (i = numMin ; i <= numMax; i++) {
+for(let i = 1; i <= 5; i++) { // num = 1
     console.log(i);
 }
-console.log(num2, num3);
+
+
+console.log('End of the program');
+
+
+// 5,4,3,2,1
+
+for(let i = 5; i >= 1; i--) {
+    console.log(i);
+}
+
+console.log('End of the program');
+
+// 0, 2, 4, 6, 8, 10
+for(let i = 0; i <= 10; i += 2) {
+    console.log(i);
+}
+
+// 50, 40, 30, 20, 10, 0
+
+for(let i = 50; i >= 0; i -= 10) {
+    console.log(i);
+}
+
+
+for(let i = 1; i <= 20; i++) {
+    console.log('Hello name!');
+}
