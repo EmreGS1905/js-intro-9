@@ -24,3 +24,4 @@ let company2Name = 'Microsoft';
 
 console.log(companyName); // Apple
 console.log(company2Name); // Microsoft
+
