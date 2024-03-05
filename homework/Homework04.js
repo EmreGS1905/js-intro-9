@@ -118,7 +118,7 @@ for ( let i = 0 ; i < array1.length; i++) {
  console.log(firstDuplicate([1, 2, 3]));
  console.log(firstDuplicate(['foo', 'abc', '123', 'bar']));
 
- // Task 16 ??
+ // Task 16 
 
   function getDuplicates (array) {   
     const duplicates = [];
@@ -138,22 +138,12 @@ for ( let i = 0 ; i < array1.length; i++) {
  console.log(getDuplicates(['A','foo','12','bar','a','a','foo']));
  console.log(getDuplicates(['foo','12',12,'bar','a']));
 
- 
+ // Task 17
  function reverseStringWord(str) {
-   
-    let str1 = str.split(' ');
-    for (let i = 0; i < str1.length; i++) {
-        let revElement = ' ';
-        let eachElement = str1[i];
-        for(let j = eachElement.length-1 ; j >=0; j--) {
-            revElement += eachElement[j];
-            
-        }str1[i]=revElement
-       
-    }let revStr = str1.join(' ');
-    return revStr;
-   
-
+    let strArr = str.split('');
+    let strRev1 = strArr.reverse().join('');
+    let strRev2 = strRev1.split(' ').reverse().join(' ');
+    return strRev2;
  }
  
 console.log(reverseStringWord('Hello World'));
@@ -197,9 +187,21 @@ console.log(getMultipleOf5(2,4));
 
 // Task 20 
 function fizzBuzz (n1, n2) {
-    let str = ' ';
-}
+    const str = [];
+    for (let i = Math.min(n1, n2) ; i <= Math.max(n1, n2); i++) {
 
+        if (i % 3 === 0 && i % 5 === 0) str.push('FizzBuzz')
+        else if (i % 3 === 0) str.push('Fizz');
+        else if (i % 5 === 0) str.push('Buzz');
+        else str.push(i) ;
+        
+    }
+    return str.join('|');
+}
+ console.log(fizzBuzz(13,18));
+ console.log(fizzBuzz(12,5));
+ console.log(fizzBuzz(5,5));
+ console.log(fizzBuzz(9,6));
 
 
 
