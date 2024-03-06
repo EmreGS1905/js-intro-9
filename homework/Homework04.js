@@ -101,6 +101,17 @@ for ( let i = 0 ; i < array1.length; i++) {
  console.log('1st array is =', array1);
  console.log('2nd array is =', array2);
  console.log('3rd array is =', array3);
+ // Task 14 - alternative solution
+const array1a = [5, 8, 13, 1, 2];
+const array2a = [9, 3, 67, 1, 0];
+const array3a = [];
+for ( let i = 0 ; i < array1a.length; i++) {
+    array3a.push(Math.max(array1a[i], array2a[i]));
+   
+}
+console.log(array1a);
+console.log(array2a);
+console.log(array3a); 
 
  // Task 15 
  function firstDuplicate (array) {
