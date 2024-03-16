@@ -1,0 +1,3 @@
+
+JS Hoisting: (Before ES6)
+-moving the declaration of variables to the top
