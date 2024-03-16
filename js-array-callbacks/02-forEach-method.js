@@ -18,10 +18,10 @@ numbers.forEach( number => {
     console.log(number % 2 === 0);
     
 })
-numbers.forEach(number => {
-    newOne.push(number*3)
-})
+numbers.forEach(number =>  newOne.push(number*3))
 console.log(newOne)
+console.log(numbers.reduce((x)=> x*1))
+
 const newArr = [];
 numbers.forEach(number => {
     if(number % 2 === 0) newArr.push(number)
