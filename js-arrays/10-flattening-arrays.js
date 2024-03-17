@@ -6,9 +6,15 @@ const students = [
     ],
     [
         ['Jane', 'Alex', 'John'],
-        ['Maria', 'Max']
+        ['Maria', 'Max', [ 'Ali', 'James' ]]
     ]
 ];
+
+
+console.log(students.flat().length); // 5
+console.log(students.flat(3).length); // 17
+
+const flatArray = students.flat(Infinity);
+console.log(flatArray);
+
 console.log(students);
-console.log(students.flat());
-console.log(students.flat(5).length);

@@ -7,7 +7,7 @@ console.log(noSpace("  Hello  "));
 console.log(noSpace(" Hello World "));
 console.log(noSpace("Tech Global"));
 
-// Task 2 
+// Task 2
 function replaceFirstLast (string) {
     let str = string.trim();
     if (str.length < 2) return ' ';
@@ -67,11 +67,12 @@ console.log(noA(["javascript", "hello", "123", "xyz"]));
 console.log(noA(["apple", "123", "ABC", "javascript"]));
 console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
 
-const product = (...args) => {
-    if(args.length === 0) return 0 ;
- return args.reduce((a,b) => a * b);
-}
-console.log(product());
-console.log(product(5));
-console.log(product(2, 5));
-console.log(product(2, 5, 3));
+const noA1 = (arrStr) => {
+    for (let word of arrStr) {
+        word.startsWith('a'); word = '###';
+    } return arrStr
+    } 
+
+console.log(noA1(["javascript", "hello", "123", "xyz"])); 
+console.log(noA1(["apple", "123", "ABC", "javascript"]));
+console.log(noA1(["apple", "abc", "ABC", "Alex", "A"]));
