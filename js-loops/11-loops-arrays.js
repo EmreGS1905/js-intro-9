@@ -22,10 +22,4 @@ for (const city of cities2) {
 }
 console.log(citiesIncludesI)
 
-let longest = 0;
-let lw = ' '
-const words = ['ali', 'emre', 'hacettepe', 'develi'];
-for (word of words) {
-    if (word.length > longest) lw = word
-}
-console.log(lw);
+

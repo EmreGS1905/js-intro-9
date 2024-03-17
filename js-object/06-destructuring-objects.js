@@ -3,12 +3,15 @@ const user = {
     password: 'test1234',
     email: 'john@gmail.com',
     age: 45,
-    city: 'Chicago',
-    credential: function () {
-        return [his.username]
-        }
+    city: 'Chicago'
 };
 
-const {username, password, email , credential} = user;
+// Object destructuring - NOT PREFERRED
+// const username = user.username;
+// const password = user.password;
+// const email = user.email;
 
-console.log(username, password, email, credential);
+// PREFERRED WAY of Object destructuring - order does not matter
+const {email, password, username} = user;
+
+console.log(username, password, email);
