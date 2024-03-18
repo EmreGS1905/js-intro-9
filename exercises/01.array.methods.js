@@ -25,3 +25,13 @@ function arr (array) {
     return Math.max(...array)
 }
 console.log(arr([4, 6, 3, 33]))
+
+
+const product1 = (...args) => {
+    if(args.length === 0) return 0 ;
+ return args.reduce((a,b) => a * b);
+}
+console.log(product1());
+console.log(product1(5));
+console.log(product1(2, 5));
+console.log(product1(2, 5, 3));
