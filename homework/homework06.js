@@ -57,21 +57,37 @@ console.log(averageOfEdges(-3,15,-3));
 console.log(averageOfEdges(10,13,20));
 
 // Task 6 
-const noA = (arrStr) => {
-    for (let i = 0 ; i < arrStr.length; i++) {
-        if(arrStr[i][0].toLowerCase() === 'a') arrStr[i] = '###'
-    }return arrStr
-    } 
+const noA = (arrStr) => arrStr.map( x => x[0].toLowerCase() === 'a'? x = '###' : x);
 
 console.log(noA(["javascript", "hello", "123", "xyz"])); 
 console.log(noA(["apple", "123", "ABC", "javascript"]));
 console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
 
-const product = (...args) => {
-    if(args.length === 0) return 0 ;
- return args.reduce((a,b) => a * b);
-}
-console.log(product());
-console.log(product(5));
-console.log(product(2, 5));
-console.log(product(2, 5, 3));
+// Task 7 
+const no3and5 = (array) => {
+    return array.map( (x) => { if(x % 5 === 0 && x % 3 === 0) {
+       return x = 101;
+    } else if (x % 3 === 0) {
+    return  x = 100 ;
+   } else if (x % 5 === 0) {
+       return  x = 99;
+   }else return x;
+})}
+
+console.log(no3and5([7, 4, 11, 23, 17]));
+console.log(no3and5([3, 4, 5, 6]));
+console.log(no3and5([10, 11, 12, 13, 14, 15]));
+
+// Task 8 
+
+
+//Task 9
+const removeDuplicates = (array) => [...new Set(array)];
+
+console.log(removeDuplicates([10,20,35,20,35,60,70,60]));
+console.log(removeDuplicates([1,2,5,2,3]));
+console.log(removeDuplicates([0,-1,-2,-2,-1]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates(['1', '2', '3','2', '3']));
+
+// Task 10 

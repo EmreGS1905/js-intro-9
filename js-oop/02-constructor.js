@@ -25,3 +25,16 @@ const teacher3 = new Teacher('Johnny', 'B', 45, 'Chemical Engineer');
 // Store all the ages in an array -> [47, 45, 45]
 // Store all the first names in an array -> [ 'Alex', 'Bobby', 'Johnny' ]
 // Find and print ythe information of the oldest teacher -> Alex is oldest with the age 47.
+
+
+Teacher.prototype.getAge = function () {
+    console.log(`${this.firstname} is oldest with the age ${this.age}.`);
+}
+
+const teachers = [teacher1, teacher2, teacher3];
+const teachersAges = teachers.map( x => x.age);
+console.log(teachersAges)
+const firstNames = teachers.map( x => x.firstname)
+console.log(firstNames);
+teacher1.getAge()
+

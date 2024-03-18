@@ -81,6 +81,7 @@ student_alex.study();
 student_morgan.getAge();
 
 const students = [student_john, student_jane, student_alex, student_morgan];
+console.log(students)
 const fullnames = students.map(x => `${x.fname} ${x.lname}`);
 
 console.log(fullnames); // [ 'John Doe', 'Jane Doe', 'Alex Smith', 'Morgan Smith' ]
