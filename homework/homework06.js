@@ -79,7 +79,23 @@ console.log(no3and5([3, 4, 5, 6]));
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
 // Task 8 
+function cPrimes (num) { //created a function to find prime numbers
+    if (num < 2) return false;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    }return true;
+}
 
+const countPrimes = (numbers) => { //calling my function above in the loop below
+    let count = 0;
+    for (const num of numbers) {
+      if(cPrimes(num) === true) count ++
+    }return count;
+        
+}
+console.log(countPrimes([-10, -3, 0, 1]));
+console.log(countPrimes([7, 4, 11, 23, 17]));
+console.log(countPrimes([41, 53, 19, 47, 67]));
 
 //Task 9
 const removeDuplicates = (array) => [...new Set(array)];
@@ -91,3 +107,52 @@ console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
 console.log(removeDuplicates(['1', '2', '3','2', '3']));
 
 // Task 10 
+function isDateFormatValid (string) {
+    let newString = string.split('/').join('');
+    if(newString > 12319999) return false;
+    if (newString.length !== 8) return false;
+    return(!isNaN(newString))
+}
+console.log(isDateFormatValid(''));
+console.log(isDateFormatValid('15/30/2020'));
+console.log(isDateFormatValid('10-30-2020'));
+console.log(isDateFormatValid('10.30.2020'));
+console.log(isDateFormatValid('5/30/2020'));
+console.log(isDateFormatValid('05/30/2020'));
+console.log(isDateFormatValid('10/2/2020'));
+console.log(isDateFormatValid('10/02/2020'));
+
+// Task 11
+const secondMax = (array) => {
+    
+    let min = -Infinity;
+    const arrMax = Math.max(...array);
+    if (array.length < 2) return array[0];
+    for (let i = 0 ; i < array.length; i++) {
+        if(array[i] > min && array[i] < arrMax) min = array[i]
+    }return min;
+}
+console.log(secondMax([ 7, 4, 4, 23, 23, 23,]));
+console.log(secondMax([3, 4, 5, 6]));
+console.log(secondMax([10]));
+
+//Task 12
+const secondMin = (array) => {
+    if(array.length < 2) return array.join('');
+   const newArr = [...new Set(array)]
+    newArr.sort((a, b) => a-b)
+    return newArr[1]
+}  
+
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23])) 
+console.log(secondMin([3, 4, 5, 6])); 
+console.log(secondMin([10])); 
+
+//Task 13 -Not my work - From 250+ killer JS one liners book - by Hernando Abella
+// I couldn't figure this out , so trying to understand how this guy did 
+const mostRepeated = (arr) => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc));
+
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
+console.log(mostRepeated([10]));
+console.log(mostRepeated(["TechGlobal"]));
