@@ -99,53 +99,27 @@ console.log(no3and5([3, 4, 5, 6]));
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
 // Task 8 
+function cPrimes (num) {
+    if (num < 2) return false;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    }return true;
+}
 
 const countPrimes = (numbers) => {
-    let count = [];
-    let notPrime = [];
-    
-    for (let i = 0 ; i < numbers.length ; i++) {
-         if(numbers[i] < 2) return 0;
-        for (let j = 2 ; j < numbers[i]; j++) {
-            if(numbers[i] % j !== 0) count.push(numbers[i])
-            
-            
-          }  
-    }  return count.length
+    let count = 0;
+    for (const num of numbers) {
+      if(cPrimes(num) === true) count ++
+    }return count;
+        
 }
 console.log(countPrimes([-10, -3, 0, 1]));
 console.log(countPrimes([7, 4, 11, 23, 17]));
 console.log(countPrimes([41, 53, 19, 47, 67]));
 
-const countPrimes1 = (numbers) => {
-    let count = 0;
-    let noP = 0
-    
-    for (let i = 2 ; i < numbers[i+2] ; i++) {
-        if( numbers[i-2] % i === 0) noP++
-        else  count+=1;
-    } 
-    return count
-}
-console.log(countPrimes1([-10, -3, 0, 1]));
-console.log(countPrimes1([7, 4, 11, 23, 17]));
-console.log(countPrimes1([41, 53, 19, 47, 67]));
 
-const countPrimes2 = (numbers) => {
-    let count = 0;
-    let notPrime = [];
-    
-   for (i = 2; i < numbers[i] ; i++) {
-            for ( let num of numbers) {
-                if(num % i === 0) count+=0
-        } count ++
-            
-          }   return count
-    }  
 
-console.log(countPrimes2([-10, -3, 0, 1]));
-console.log(countPrimes2([7, 4, 11, 23, 17]));
-console.log(countPrimes2([41, 53, 19, 47, 67]));
+
 
 //Task 9 
 const removeDuplicates = (array) => [...new Set(array)];
@@ -156,11 +130,25 @@ console.log(removeDuplicates([0,-1,-2,-2,-1]));
 console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
 console.log(removeDuplicates(['1', '2', '3','2', '3']));
 
+// Task 9 - 1
+const removeDuplicates1 = (array) => {
+    const duplicates = [];
+    for(const ele of array) {
+        if(duplicates.indexOf(ele) === -1)duplicates.push(ele)
+    }return duplicates;
+}
+console.log(removeDuplicates1([10,20,35,20,35,60,70,60]));
+console.log(removeDuplicates1([1,2,5,2,3]));
+console.log(removeDuplicates1([0,-1,-2,-2,-1]));
+console.log(removeDuplicates1(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates1(['1', '2', '3','2', '3']));
+
 //Task 10 
 function isDateFormatValid (string) {
     let newString = string.split('/').join('');
+    if(newString > 12319999) return false;
     if (newString.length !== 8) return false;
-    return!(isNaN(newString))
+    return(!isNaN(newString))
 
 }
 console.log(isDateFormatValid(''));
@@ -186,9 +174,63 @@ console.log(secondMax([ 7, 4, 4, 23, 23, 23,]));
 console.log(secondMax([3, 4, 5, 6]));
 console.log(secondMax([10]));
 
+// Task 12
+const secondMin = (array) => {
+    if(array.length < 2) return array.join('');
+   const newArr = [...new Set(array)]
+    newArr.sort((a, b) => a-b)
+    return newArr[1]
+}  
+
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23])) 
+console.log(secondMin([3, 4, 5, 6])); 
+console.log(secondMin([10])); 
+
+//Task 13 -Not my work - From 250+ killer JS one liners book - by Hernando Abella
+// I couldn't figure this out , so trying to understand how this guy did 
+const mostRepeated = (arr) => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc));
+
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
+console.log(mostRepeated([10]));
+console.log(mostRepeated(["TechGlobal"]) )
+
 
 let a = "14/45/2024";
 let b = a.split('/');
 console.log(b.length)
 if (b.length !== 8) console.log(false)
 console.log(!(isNaN(b)))
+
+const ar3 = []
+const ar1 = [1, 2, 2, 2, 8, 8 ,5];
+    const ar2 = ar1.filter((x , y) => 
+    ar1.indexOf(x) === y)
+
+console.log(ar2)
+console.log(ar1)
+
+console.log(ar1.indexOf(8))
+
+
+const d = arr => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc));
+console.log(d([4, 7, 4, 4, 4, 23,23,23]))
+
+const mostrep = arr => {
+    let count1 = 0
+    arr.forEach( ele => ele = ele , count1++)
+
+}
+console.log(mostrep([4, 7, 4, 4, 4, 23,23,23]))
+
+const c = [1, 5, 5, 8, 9,8,8,8];
+const e = c.reduce( (x,y) => x = y );
+console.log(e)
+
+const sum = c.reduce((a, b) => (a[b] = a[b]+2,a));
+console.log(sum)
+
+let st = '152';
+let as = 198;
+console.log(st>as)
+
