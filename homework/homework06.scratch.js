@@ -195,42 +195,6 @@ console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]
 console.log(mostRepeated([10]));
 console.log(mostRepeated(["TechGlobal"]) )
 
-
-let a = "14/45/2024";
-let b = a.split('/');
-console.log(b.length)
-if (b.length !== 8) console.log(false)
-console.log(!(isNaN(b)))
-
-const ar3 = []
-const ar1 = [1, 2, 2, 2, 8, 8 ,5];
-    const ar2 = ar1.filter((x , y) => 
-    ar1.indexOf(x) === y)
-
-console.log(ar2)
-console.log(ar1)
-
-console.log(ar1.indexOf(8))
-
-
-const d = arr => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc));
-console.log(d([4, 7, 4, 4, 4, 23,23,23]))
-
-const mostrep = arr => {
-    let count1 = 0
-    arr.forEach( ele => ele = ele , count1++)
-
-}
-console.log(mostrep([4, 7, 4, 4, 4, 23,23,23]))
-
-const c = [1, 5, 5, 8, 9,8,8,8];
-const e = c.reduce( (x,y) => x = y );
-console.log(e)
-
-const sum = c.reduce((a, b) => (a[b] = a[b]+2,a));
-console.log(sum)
-
-let st = '152';
-let as = 198;
-console.log(st>as)
+let a = 'ab/cd///nnnn';
+console.log(a.split('/').join(' '))
 
