@@ -150,9 +150,34 @@ console.log(secondMin([10]));
 
 //Task 13 -Not my work - From 250+ killer JS one liners book - by Hernando Abella
 // I couldn't figure this out , so trying to understand how this guy did 
-const mostRepeated = (arr) => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc));
+const mostRepeated1 = (arr) => arr.reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1,acc),{});
+
+console.log(mostRepeated1([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated1(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
+console.log(mostRepeated1([10]));
+console.log(mostRepeated1(["TechGlobal"]));
+
+// Task 13
+const mostRepeated = (array) => {
+    let maxCount = 0;
+    let maxElement;
+       
+    for(let i = 0; i < array.length; i++){
+        let count = 0;
+        for(let j = 0; j < array.length; j++){
+            if(array[i] === array[j]) count++;
+       }
+        if(count > maxCount){
+        maxCount = count;
+        maxElement = array[i]; 
+        }
+    }
+    
+   return maxElement; 
+}
 
 console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
 console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
 console.log(mostRepeated([10]));
 console.log(mostRepeated(["TechGlobal"]));
+

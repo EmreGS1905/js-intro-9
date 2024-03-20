@@ -25,6 +25,14 @@ console.log(countVowels("Hello World"));
 console.log(countVowels("JavaScript is fun"));
 console.log(countVowels(""));
 
+// Task 3 - single line
+const countVowels = (str) =>  str.split('').filter( x => 'aeiouAEIOU'.includes(x)).length;
+
+console.log(countVowels("Hello"));
+console.log(countVowels("Hello World"));
+console.log(countVowels("JavaScript is fun"));
+console.log(countVowels(""));
+
 // Task 4 
 function countConsonants (string) {
     let futureCons = string.length;
@@ -39,11 +47,15 @@ console.log(countConsonants("Hello World"));
 console.log(countConsonants("JavaScript is fun"));
 console.log(countConsonants(""));
 
+// Task4 single line
+const countConsonants = (str) => str.split('').filter( x => !'aeiou'.includes(x)).length;
+console.log(countConsonants("Hello"));
+console.log(countConsonants("Hello World"));
+console.log(countConsonants("JavaScript is fun"));
+console.log(countConsonants(""));
+
 // Task 5
-function countWords (string) {
-    const words = string.trim().split(' ');
-    return words.length;
-}
+const countWords = (string) => string.trim().split(' ').length;
 console.log(countWords("    Javascript is fun       "));
 console.log(countWords('Cypress is an UI automation tool.  '));
 console.log(countWords('1 2 3 4'));
@@ -81,8 +93,8 @@ console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   "]
 console.log(countMultipleWords([]));
 
 // Task 9
-const count3OrLess = (str) => str.split(' ').filter( x => x.length <= 3 && x.length > 0).length;
-
+//const count3OrLess = (str) => str.split(' ').filter( x => x.length <= 3 && x.length > 0).length;
+const count3OrLess = (str) => str.split(' ').reduce((x,y) => y.length <= 3 && y.length > 0? x + 1 : x, 0);
 console.log(count3OrLess('Hello'));
 console.log(count3OrLess('Hi John'));
 console.log(count3OrLess('JavaScript is fun'));
@@ -111,10 +123,16 @@ function add(arr1, arr2) {
     for (let i = 0; i < longerArr; i++) {
         const firstArr = arr1[i] || 0;
         const secondArr = arr2[i] || 0;
-        sum[i] = firstArr + secondArr;
+    
+        sum[i] = firstArr + secondArr
     }
     return sum;
 }
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));
+// Task 11 - 2
+const add = (arr1, arr2) => arr1.map ((x , y) => x + arr2[y] || x)
 console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));
 console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));
