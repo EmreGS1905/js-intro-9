@@ -17,7 +17,7 @@ const singer = {
     sing() {
         console.log('SING function executes!');
     },
-    __proto__: person
+    __proto__: person 
 };
 // child object can access parent prototype object functions
 singer.sing();

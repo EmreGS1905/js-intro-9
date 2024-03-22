@@ -1,106 +1,75 @@
-
-const hasVowel = str => {
-    let vow = 'aeiou';
-    const string = str.toLowerCase().split('');
-    for(let i = 0; i < string.length; i++) {
-      if(vow.includes(string[i])) return true;
-    }return false
-
-}
-console.log(hasVowel('adana'));
-console.log(hasVowel('DcD'));
-console.log(hasVowel('cyx'));
-
-let a ='adnanaDDDba'
-let b = a.toLowerCase().split('')
-console.log(b)
-
-for (let i = 1; i <= 100; i++) {
-    (i % 7 === 0)) 
-}
-
-const arr1 = [33, 44, 23, 55,22, 22,33, 44];
-for (const number of arr1) {
-    console.log(number)
-}
-
-console.log([...new Set(arr1)])
-
-const mostRepeated = (array) => {
-    let highestCount = 0;
-    let mostReptElement;
-       
-    for(let i = 0; i < array.length; i++){
-        let count = 0;
-        for(let j = 0; j < array.length; j++){
-            if(array[i] === array[j]) count++;
-       }
-        if(count > highestCount){
-        highestCount = count;
-        mostReptElement = array[i]; 
-        }
-    }
-    
-   return mostReptElement; 
-}
-
-
-
-console.log(mostRepeated([4, 7, 4,7, 7, 4, 23, 23,7 ,23,7,23]));
-console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
-console.log(mostRepeated([10, 9, 9]));
-console.log(mostRepeated(["TechGlobal"]));
-function abc (array) {
-for ( i = 0; i < array.length; i++) {
-    for (j = 0 ; j < array.length; j++) {
-        console.log(array[i] , array[j])
+const firstPos = (arr) => {
+    for (num of arr) {
+        if (num > 0) return num;
     }
 }
+    
+console.log(firstPos([0, 3, -9, 5, 8]));
+console.log(firstPos([-2, 0, -9, 10, -5]));
+console.log(firstPos([1, 2, -9, 10, -5]));
+
+const lastNeg = (arr) => {
+    const arrNeg = arr.filter( x => x < 0);
+    return arrNeg[arrNeg.length-1];
+}
+// another way
+const lastNeg = (array) => {
+    const arr1 = array.reverse()
+    for (num of arr1) {
+        if (num < 0 ) return num;
+    }
+   
 }
 
-const countPos = (array) => {
-    let count = [];
-    for (const num of array) {
-        if(num > 0 ) count.push(num)
-    } return count.length
-} 
-console.log(countPos([-45, 0, 0, 34, 5, 67,]));
-console.log(countPos([-23, -4, 0, 2, 5, 90, 123]));
-console.log(countPos([0, -1, -2, -3]));
+console.log(lastNeg([0, 3, -9, 5, 8]))
+console.log(lastNeg([-2, 3, -97, 7, -5]))
+console.log(lastNeg([2, 3, 17, 7, -2]))
 
-const countA = (str) => str.toLowerCase().split('').filter( x => x === 'a').length;
-console.log(countA('TechGlobal is a QA bootcamp'));
-console.log(countA('QA stands for Quality Assurance'));
-console.log(countA("Cypress"));
-
-const counta = (str) => {
-    let count = 0;
-    
-    for (const x of str.toLowerCase()) {
-        if(x === 'a') count++
-    }return count;
+// Task 3
+const firstLongest = (arr) => {
+    let longest = arr[0];
+    for (word of arr) {
+        if(word.length > longest.length) longest = word;
+    }return longest
 }
-console.log(counta('TechGlobal is a QA bootcamp'));
-console.log(counta('QA stands for Quality Assurance'));
-console.log(counta("Cypress"));
+console.log(firstLongest(["red", "blue", "yellow", "white"]));
+console.log(firstLongest(["Apple", "Banana", "Orange"]));
+console.log(firstLongest(["purple", "yellow", "orange"]));
 
-const countVowels = (str) =>  str.split('').filter( x => 'aeiouAEIOU'.includes(x)).length;
+// Task 4 
+const lastShortest = (arr) => {
+    let last = arr[0];
+    for(word of arr) {
+        if(word.length <= last.length) last = word;
 
-console.log(countVowels("Hello"));
-console.log(countVowels("Hello World"));
-console.log(countVowels("JavaScript is fun"));
-console.log(countVowels(""));
+    }return last;
+}
+const lastShortest = (arr) => arr.reduce((x,y) => y.length <= x.length ? y : x)
+console.log(lastShortest(["redness", "blue", "yellow",'red', "white"]));
+console.log(lastShortest(["Apple", "Banana", "Mango"]));
+console.log(lastShortest(["white", "yellow", "brown"]));
 
-const countConsonants = (str) => str.split('').filter( x => !'aeiou'.includes(x)).length
-    
-console.log(countConsonants("Hello"));
-console.log(countConsonants("Hello World"));
-console.log(countConsonants("JavaScript is fun"));
-console.log(countConsonants(""));
+// Task 5
+const max = (arr) => Math.max(...arr);
+console.log(max([0, 3, -9, 5, 8]));
+console.log(max([0, -2, -7, 10, -5]));
+console.log(max([1, 2, 3, -2]));
 
-const num = [2, 3, 4, 5,6] //4+6+8+10 = 28
-const num1 = [ 3, 1, 8]
-//console.log(num.reduce( (x,y) => x + (y*2),0));
+// Task 6 
+const min = (arr) => Math.min(...arr);
+console.log(min([0, 3, -9, 5, 8]));
+console.log(min([0, 3, -9, 5, -99]));
+console.log(min([0, -2, -7, 10, -5]));
+console.log(min([1, 2, 3, -2]));
 
+// Task 7 
 
-console.log(num.map( (x, y) => x + num1[y] || x))
+const commonElements = (arr1, arr2) =>{
+    const arr3 = []
+    for (num of arr1) {
+        if(arr2.includes(num)) arr3.push(num)
+    }return arr3
+}
+console.log(commonElements([10,20,30,50,70], [20,50,70]));
+console.log(commonElements([30,50,70], [20,100,300]));
+console.log(commonElements(["30", "abc", "hi"], [30, "Hi", "abc"]));
