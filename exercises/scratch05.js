@@ -68,3 +68,32 @@ for(const x in player.position) {
  console.log(player.position[x]);
 }
 
+const noVowel = (str) => {
+    let output = '';
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    for(const char of str) {
+        if(!vowels.includes(char.toLowerCase())) output+= char;
+    } return output;
+}
+console.log(noVowel("TechGlobal"));
+console.log(noVowel("AEOxyz"));
+console.log(noVowel("Javascript"));
+console.log(noVowel(""));
+console.log(noVowel("125$"));
+
+
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+const noVowel1 = (str) => str.split('').filter((char) => !vowels.includes(char.toLowerCase())).join('');
+
+console.log(noVowel1("TechGlobal"));
+console.log(noVowel1("AEOxyz"));
+console.log(noVowel1("Javascript"));
+console.log(noVowel1(""));
+console.log(noVowel1("125$"));
+
+const sumOfDigits = (str) => str.split('').filter( x => x > -Infinity)
+console.log(sumOfDigits('Javascript'));
+console.log(sumOfDigits("John's age is 29"));
+console.log(sumOfDigits('$125.0'));
+console.log(sumOfDigits(''));
