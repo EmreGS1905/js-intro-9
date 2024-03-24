@@ -88,4 +88,57 @@ console.log(sumOfDigits("John's age is 29"));
 console.log(sumOfDigits('$125.0'));
 console.log(sumOfDigits(''));
 
-// Task 7
+// Task 7 - 1 
+const arrFactorial = (arr) => { 
+    
+    const arr1 = []
+    for(let i = 0 ; i < arr.length  ; i++) {
+        let sum = 1;
+        for( let j = arr[i]; j>0; j--) {
+            sum *= j
+            
+        }  arr1.push(sum)
+        
+    }return arr1
+}
+console.log(arrFactorial([1, 2, 3, 4]));
+console.log(arrFactorial([0, 5]));
+console.log(arrFactorial([5, 0, 6]));
+console.log(arrFactorial([]));
+
+// Task 7 - 2
+const arrFact = (array) => array.map( x => {
+    let sum = 1;
+        for (i = x ; i > 0; i--) {
+        sum *= i
+    }return sum
+} 
+)
+console.log(arrFact([1, 2, 3, 4]));
+console.log(arrFact([0, 5]));
+console.log(arrFact([5, 0, 6]));
+console.log(arrFact([]));
+
+// Task 8 
+
+function categorizeCharacters(string) {
+    let letters = '';
+    let digits = '';
+    let specials = '';
+
+    for (let char of string) {
+        if (char >= 'A' && char <= 'Z' || char >= 'a' && char <= 'z') {
+            letters += char;
+        } else if (char >= '0' && char <= '9') {
+            digits += char;
+        } else {
+            specials += char;
+        }
+    }
+
+    return [letters, digits, specials];
+}
+console.log(categorizeCharacters('1234'));
+console.log(categorizeCharacters('abc123$#%'));
+console.log(categorizeCharacters('12ab$%3c%'));
+
