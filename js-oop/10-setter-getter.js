@@ -39,9 +39,7 @@ class Book {
   console.log(book1); // Book { title: '', genre: '', page: -5 }
   */
   
-  React
   
-  Reply
   
   
   
