@@ -126,7 +126,7 @@ function categorizeCharacters(string) {
     let digits = '';
     let specials = '';
 
-    for (let char of string) {
+    for (const char of string) {
         if (char >= 'A' && char <= 'Z' || char >= 'a' && char <= 'z') {
             letters += char;
         } else if (char >= '0' && char <= '9') {
