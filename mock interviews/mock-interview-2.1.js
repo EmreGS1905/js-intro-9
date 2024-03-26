@@ -23,7 +23,7 @@ console.log(firstlastWord('    '));
 // Write a function named hasVowel() takes string and returns true if string has a vowel or false
 
 const hasVowel = (str) => {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    const vowels = 'aeiou';
     for(const char of str.toLowerCase()) {
         if(vowels.includes(char)) return true;
     }return false;
@@ -47,6 +47,29 @@ console.log(startVowel('orange'));
 console.log(startVowel(''));
 console.log(startVowel('   '));
 console.log(startVowel('123'));
+
+// Average of Edges - return average of min and max
+const averageOfEdges = (n1, n2, n3) => (Math.max(n1, n2, n3) + Math.min(n1, n2, n3)) / 2;
+console.log(averageOfEdges(0,0,0));
+console.log(averageOfEdges(0,0,6));
+console.log(averageOfEdges(-2,-2,10));
+console.log(averageOfEdges(-3,15,-3));
+console.log(averageOfEdges(10,13,20));
+
+// Swap First and Last Characters
+const replaceFirstLast = (str) => {
+    if(str.trim().length < 2) return ' '; 
+    let fChar = str.trim().at(0);
+    let lChar = str.trim().at(-1);
+    let middle = str.trim().slice(1, str.length - 1);
+    return lChar + middle + fChar;
+}
+console.log(replaceFirstLast(''));
+console.log(replaceFirstLast('Hello'));
+console.log(replaceFirstLast('Hello     '));
+console.log(replaceFirstLast('Tech Global'));
+console.log(replaceFirstLast('A'));
+console.log(replaceFirstLast('   A    '));
 
 
 
