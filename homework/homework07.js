@@ -142,3 +142,4 @@ console.log(categorizeCharacters('1234'));
 console.log(categorizeCharacters('abc123$#%'));
 console.log(categorizeCharacters('12ab$%3c%'));
 
+
