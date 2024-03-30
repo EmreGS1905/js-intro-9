@@ -72,8 +72,9 @@ console.log(getCommons(["Javascript", "C#", "C#"], ["Python", "C#", "C++"]));
 // Task 9
 const noXInVariables = (arr) => {
     const newArr = arr.join(' ').split('');
-    return newArr.reduce((str, char) => char.toLowerCase() !== 'x' ? str += char : str, '' ).split(' ').filter(x => x);
-}
+    const newArr2 = newArr.reduce((str, char) => char.toLowerCase() !== 'x' ? str += char : str, '' ).split(' ').filter(x => x);
+    return newArr2.map( ele => isNaN(parseInt(ele)) ? ele : parseInt(ele))
+} 
 console.log(noXInVariables(['abc', 123, '#$%']));
 console.log(noXInVariables(['xyz', 123, '#$%']));
 console.log(noXInVariables(['x', 123, '#$%']));

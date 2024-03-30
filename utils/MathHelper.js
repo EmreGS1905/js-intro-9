@@ -4,5 +4,15 @@ function generateRandomNumber (a, b) {
     return Math.floor(Math.random() * (max - min +1) + min);
 }
 
+function maxOfArray (arr) {
+    return Math.max(...arr);
+}
+
+function minOfArray (arr) {
+    return Math.min(...arr);
+}
+
 // Exporting reusable methods
 module.exports.generateRandomNumber = generateRandomNumber;
+module.exports.maxOfArray = maxOfArray;
+module.exports.minOfArray = minOfArray;
