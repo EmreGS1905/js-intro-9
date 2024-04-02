@@ -130,5 +130,44 @@ console.log(getMultipleOf5(23, 5));
 console.log(getMultipleOf5(5, 5));
 console.log(getMultipleOf5(2, 4));
 
+//Count negative numbers
+const countNeg = (array) => array.filter( x => x < 0).length;
+console.log(countNeg([-45, 0, 0, 34, 5, 67]));
+console.log(countNeg([-23, -4, 0, 2, 5, 123]));
+console.log(countNeg([0, -1, -2, -3]));
 
+// Count A
+const countA = (str) => str.split('').filter( x => x.toLowerCase() === 'a').length;
+console.log(countA('TechGlobal is a QA bootcamp'));
+console.log(countA('QA stands for quality Assurance'));
+console.log(countA('Cypress'));
+
+// Count Words 
+const countWords = (str) => str.trim().split(' ').length;
+console.log(countWords('    Javascript is fun   '));
+console.log(countWords('Cypress is an UI automation tool.'));
+console.log(countWords('1 2 3 4'));
+
+// Factorial
+const factorial = (number) => {
+    let total = 1;
+    for(let i = 1 ; i <= number; i++) {
+        total *= i
+    }return total;
+}
+console.log(factorial(5));
+console.log(factorial(4));
+console.log(factorial(0));
+console.log(factorial(1));
+
+// Count 3 or less , return the words less than 3 characters or less
+const count3OrLess = (str) => str === ''? 0: str.split(' ').filter( x => x.length <= 3).length;
+
+console.log(count3OrLess('Hello'));
+console.log(count3OrLess('Hi John'));
+console.log(count3OrLess('JavaScript is fun'));
+console.log(count3OrLess('My name is John Doe'));
+console.log(count3OrLess(''));
+
+// Remove Extra Spaces
 
