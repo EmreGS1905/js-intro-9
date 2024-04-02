@@ -56,3 +56,9 @@ console.log(noXInVariables1(['abc', 123, '#$%']));
 console.log(noXInVariables1(['xyz', 123, '#$%']));
 console.log(noXInVariables1(['x', 123, '#$%']));
 console.log(noXInVariables1(['xyXyXy', 'Xx', 'ABC']));
+
+const ar = [2, 4, 77, 45];
+function sum(numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(ar))
