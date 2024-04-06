@@ -65,3 +65,43 @@ console.log(sum(ar))
 
 bdfbgfbgf
 bgfbgfbfg
+
+function countOccurrencesOfCharacters(str) {
+  if (str === "") return "";
+
+  const count = {};
+  for (const char of str) {
+    if (count[char]) {
+      count[char]++;
+    } else {
+      count[char] = 1;
+    }
+  }
+
+  const repeatedChars = Object.keys(count).filter(key => count[key] > 1);
+  const result = {};
+  repeatedChars.forEach(char => result[char] = count[char]);
+
+  return result;
+
+  
+}
+console.log(countOccurrencesOfCharacters(''));
+console.log(countOccurrencesOfCharacters('abc'));
+console.log(countOccurrencesOfCharacters('abbcca'));
+console.log(countOccurrencesOfCharacters('aaAAa'));
+console.log(countOccurrencesOfCharacters('www'));
+
+// HW9 Task -5 
+const chk = (str) =>  {
+  let a = [];
+  for(const char of str) {
+    a.push(str.split(char).length -1 +char)
+    
+  }return [...new Set(a)].join('');
+  
+}
+console.log(chk('abccdd'));
+console.log(chk(''));
+console.log(chk('abbcca'));
+console.log(chk('wwwyww'));

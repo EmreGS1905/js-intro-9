@@ -170,4 +170,62 @@ console.log(count3OrLess('My name is John Doe'));
 console.log(count3OrLess(''));
 
 // Remove Extra Spaces
+const removeExtraSpaces = (str) => str.trim().split(' ').filter( x => x !== '' ).join(' ');
 
+console.log(removeExtraSpaces('Hello'));
+console.log(removeExtraSpaces('    Hello  World '));
+console.log(removeExtraSpaces('    JavaScript is    fun'));
+console.log(removeExtraSpaces(''));
+
+// Middle Number
+const middleInt = (num1, num2, num3) => {
+    if(num1 >= num2 && num1 <= num3) return num1;
+    else if (num2 >= num1 && num2 <= num3) return num2;
+    else return num3;
+}
+
+console.log(middleInt(1, 2, 2));
+console.log(middleInt(5, 5, 8));
+console.log(middleInt(5, 3, 5));
+console.log(middleInt(1, 1, 1));
+console.log(middleInt(-1, 25, 10));
+
+// first duplicate element
+const firstDuplicate = (arr) => {
+    for (const ele of arr) {
+        if(arr.indexOf(ele) !== arr.lastIndexOf(ele)) return ele;
+        
+    }return -1;
+}
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
+console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));
+console.log(firstDuplicate([5, '5', 3, 7, 4]));
+console.log(firstDuplicate([123, 'abc', '123', 3, 'abc']));
+console.log(firstDuplicate([1, 2, 3]));
+console.log(firstDuplicate(['foo', 'abc', '123', 'bar']));
+
+//find all duplicate elements
+const getDuplicates = (arr) =>{
+    const newArr = arr.filter( x => arr.indexOf(x) !== arr.lastIndexOf(x));
+    return [...new Set(newArr)]
+}
+
+console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
+console.log(getDuplicates([1, 2, 5, 0, 7]));
+console.log(getDuplicates(['A', 'foo', '12', 12, 'bar', 'a', 'a', 'foo']));
+console.log(getDuplicates(['foo', '12', 12, 'bar', 'a']));
+
+// count Vowels
+const countVowels = (str) => {
+    const vowels = 'aeiou'
+    let str1 = '';
+    for(const ele of str) {
+        if(vowels.includes(ele.toLowerCase())) str1+= ele;
+    } return str1.length;
+}
+
+console.log(countVowels('Hello'));
+console.log(countVowels('JavaScript is fun'));
+console.log(countVowels(''));
+
+// Reverse String Words
