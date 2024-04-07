@@ -229,3 +229,34 @@ console.log(countVowels('JavaScript is fun'));
 console.log(countVowels(''));
 
 // Reverse String Words
+const reverseStringWords = (str) => {
+return str.trim().split('').reverse().join('').split(' ').reverse().join(' ');
+}
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like Javascript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(""));
+console.log(reverseStringWords(" "));
+
+//Count consonants
+const countConsonants = (str) => {
+    let vowels ='aeiou';
+    let count = 0;
+    for (const char of str) {
+        if(!vowels.includes(char.toLowerCase())) count+= 1
+    } return count;
+}
+console.log(countConsonants('Hello'));
+console.log(countConsonants('Hello World'));
+console.log(countConsonants('JavaScript is fun'));
+console.log(countConsonants(''));
+
+// Count multiple words
+const countMultipleWords = (arr) => arr.filter( x => x.trim().includes(' ')).length;
+
+console.log(countMultipleWords(["foo", "", " ", "foo bar", " foo" ]));
+console.log(countMultipleWords(["foo", "bar", "foobar", " foobar "]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", " foo bar "]));
+console.log(countMultipleWords([]));
+
+// Fizz Buzz
