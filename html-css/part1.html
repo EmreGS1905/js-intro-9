@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML-CSS</title>
+    <style>
+        .second-div {
+            background-color: bisque;
+        }
+    </style>
   </head>
   <body>
     <!-- Heading elements -->
@@ -34,28 +39,48 @@
       <br />
       <em><b>I'm a BOLD and ITALIC sentence in a paragraph.</b></em>
     </p>
-    <hr>
+    <hr />
     <!-- Images -->
     <h2>Images</h2>
     <img src =
     https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png alt =
     "blue eyed kitty" width="250" height="250">
-    <hr>
+    <hr />
     <h2>Link elements</h2>
     <h3>Anchor tag</h3>
-    <a href="https://www.techglobal-training.com/" target = "_blank">Techglobal Training Website</a>
-    <br>
+    <a href="https://www.techglobal-training.com/" target="_blank"
+      >Techglobal Training Website</a
+    >
+    <br />
     <a href="#">Nowhere</a>
-    <br>
+    <br />
     <a href="https://www.toyota.com" target="_blank">
-        <img src="https://shorturl.at/dOS13" alt="toyota">
+      <img src="https://shorturl.at/dOS13" alt="toyota" />
     </a>
-    <hr>
-    <h2>Styling</h2>
-    <p style = "color: red;"> This is styled paragraph</p>
+    <hr />
+    <h2 class="second-div">Styling</h2>
+    <div style="background-color: aquamarine">
+      <!-- Inline CSS -->
+      <p style="color: red">This is styled paragraph</p>
+      <p style="color: blue">This is styled paragraph 2</p>
+    </div>
+    <div class="second-div">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam aliquid
+        officia sapiente cumque nostrum quae voluptatem distinctio architecto ut
+        fugit! Corporis ea alias placeat saepe sit assumenda ducimus, veniam
+        suscipit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        optio perferendis ex nisi aut temporibus fugit suscipit nulla quisquam
+        perspiciatis numquam, labore dignissimos sint alias ipsam aliquam
+        dolorum, officia eligendi!
+      </p>
+    </div>
     <hr>
     <h2>List items</h2>
-    <h4>Unordered List</h4>
+    <h4>Unordered list</h4>
     <ul>
         <li>JavaScript</li>
         <li>TypeScript</li>
@@ -64,7 +89,7 @@
     <h4>Ordered list</h4>
     <ol>
         <li>Cypress</li>
-        <li>Playwright</li>
+        <li>Playwrigth</li>
         <li>Selenium</li>
     </ol>
   </body>
