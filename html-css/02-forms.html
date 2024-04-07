@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body style="background-color: lightblue;">
-    <h1>Registration</h1>
+    <style>
+      div {
+        border: 1px solid;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+
+    <!-- <form action="https://aws.com" method="POST"> -->
     <form>
+      <fieldset>
+        <legend>Contact Form</legend>
         <div>
-        <label for="fname">First Name</label><br>
-        <input type="text" id="fname"/><br>
-        <label for="lname">Last Name</label><br>
-        <input type="text" id="lname"/><br>
-        <label for="email">Email</label><br>
-        <input type="text" id="email"/><br>
-        <label for="Phone">Phone</label><br>
-        <input type="text" id="Phone"/><br>
-        <label for="select-program">Select Program</label><br>
-<select name="select-program" id="select-program"><br>
-    <option value="SDET">Software Engineer in Test (SDET)</option>
-    <option value="Cypress">Cypress Automation with JavaScript</option>
-    <option value="Playwright">Playwright Automation with Javascript</option>
-</select><br>
-<label for="program-type">Program Type</label><br>
-<select name="program-type" id="program-type"><br>
-    <option value="In-Person">In-Person</option>
-    <option value="Online">Online</option>
-</select><br>
-<label for="English Fluency Level">English Fluency Level</label><br>
-<select name="English Fluency Level" id="English Fluency Level">
-<option value="Beginner">Beginner</option>
-<option value="Intermediate">Intermediate</option>
-<option value="Advanced">Advanced</option>
-<option value="Fluent">Fluent</option>
-</select><br>
-<label for="hear">How did you hear from us?</label><br>
-<select name="hear" id="hear">
-    <option value="Google">Google</option>
-    <option value="Referral">Referral</option>
-    <option value="Social Media">Social Media</option>
-    
-    </select><br>
-    <form action="/submit-form" method="post">
-        
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="First Name" />
+        </div>
+        <div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <!-- <input type="password" id="password" min="8" max="32" pattern="[A-Z]/g"/> -->
+          <input type="password" id="password" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="abc@mail.com" />
+        </div>
+        <div>
+          <p>Are you coming to class tomorrow?</p>
+          <label
+            >Yes
+            <input type="radio" name="attendance" checked />
+          </label>
+          <label
+            >No
+            <input type="radio" name="attendance" />
+          </label>
+        </div>
+        <div>
+          <p>Pick your favorite colors:</p>
+          <label>
+            Blue
+            <input type="checkbox" value="blue" />
+          </label>
+          <label>
+            Red
+            <input type="checkbox" value="red" />
+          </label>
+          <label>
+            Green
+            <input type="checkbox" value="green" />
+          </label>
+        </div>
+        <div>
+          <p>Select your batch?</p>
+          <select>
+            <option value="01">Batch 01</option>
+            <option value="02">Batch 02</option>
+            <option value="03">Batch 03</option>
+          </select>
+        </div>
+        <div>
+          <label for="comment"> Leave your comment</label> <br />
+          <textarea cols="40" rows="10" id="comment"></textarea>
+        </div>
+        <div>
+          <!-- <button type="submit">Submit</button> -->
+          <input type="submit" />
+        </div>
+      </fieldset>
     </form>
-    
-</body>
+  </body>
 </html>
