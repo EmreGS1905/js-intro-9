@@ -63,4 +63,110 @@ console.log(findBiggestNumber('525'));
 console.log(findBiggestNumber('3 for 10 dollars'));
 
 // Task 5 
+const countOccurrencesOfCharacters = (string) => {
+    const array = string.split('');
+    let stringOfCount = "";
+    let count = 1;
+    for(let i = 0; i < array.length; i++) {
+    if(array[i] === array[i + 1]) count++;
+    else {
+    stringOfCount += count + array[i];
+    count = 1;
+    }
+}
+    return stringOfCount;
+}
+
+console.log(countOccurrencesOfCharacters(""));
+console.log(countOccurrencesOfCharacters("abc"));
+console.log(countOccurrencesOfCharacters("abbcca"));
+console.log(countOccurrencesOfCharacters("aaAAa"));
+console.log(countOccurrencesOfCharacters("www" ));
+
+// Task 6
+
+const fibonacciSeries1 = (n) => {
+    const arrayFibonacci = [0];
+    let initSum = 0;
+    let prevSum = 1;
+    let currSum = 1;
+    if( n === 1) return [0];
+    else {
+        for(let i = 1; i < n; i++) { 
+        arrayFibonacci.push(currSum);
+        currSum = initSum + prevSum;  
+        initSum = prevSum;
+        prevSum = currSum;
+        }
+    }
+    return arrayFibonacci;
+}
+
+console.log(fibonacciSeries1(3));
+console.log(fibonacciSeries1(5));
+console.log(fibonacciSeries1(7));
+console.log(fibonacciSeries1(8));
+console.log(fibonacciSeries1(1));
+console.log(fibonacciSeries1(2));
+
+// Task 7 
+
+const fibonacciSeries2 = (n) => {
+    const arrayFibonacci = [0];
+    let initSum = 0;
+    let prevSum = 1;
+    let currSum = 1;
+    if( n === 1) return 0;
+    else {
+        for(let i = 1; i < n; i++) { 
+        arrayFibonacci.push(currSum);  
+        currSum = initSum + prevSum;
+        initSum = prevSum;
+        prevSum = currSum;
+        }
+    }
+    return arrayFibonacci[n - 1];
+}
+
+console.log(fibonacciSeries2(2));
+console.log(fibonacciSeries2(3));
+console.log(fibonacciSeries2(4));
+console.log(fibonacciSeries2(8));
+console.log(fibonacciSeries2(9));
+console.log(fibonacciSeries2(1));
+
+// Task 8 
+
+const findUniques = (arr1, arr2) => {
+    const arr3 = [...new Set(arr1), ...new Set(arr2)];
+    const arr4 = [];
+    for(const el of arr3) {
+        if(arr3.indexOf(el) === arr3.lastIndexOf(el)) arr4.push(el)
+    }
+return arr4;
+    }
+
+console.log(findUniques([], []));
+console.log(findUniques([], [1, 2, 3, 2]));
+console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+console.log(findUniques([8, 9], [9, 8, 9]));
+console.log(findUniques([-1, -2], [1, 2])); 
+
+// Task 9 
+
+const isPowerOf3 = (number) => {
+    if(number === 1) return true;
+    for(let i = 3; i <= number ; i *= 3) {
+        if(number === i) return true;
+    }
+    return false;
+}
+
+console.log(isPowerOf3(1));
+console.log(isPowerOf3(2));
+console.log(isPowerOf3(3));
+console.log(isPowerOf3(27));
+console.log(isPowerOf3(100));
+console.log(isPowerOf3(81));
+console.log(isPowerOf3(9));
 
