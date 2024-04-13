@@ -260,3 +260,98 @@ console.log(countMultipleWords(["f o o", "b a r", "foo bar", " foo bar "]));
 console.log(countMultipleWords([]));
 
 // Fizz Buzz
+function fizzBuzz (n1, n2) {
+    const str = [];
+    for (let i = Math.min(n1, n2) ; i <= Math.max(n1, n2); i++) {
+
+        if (i % 3 === 0 && i % 5 === 0) str.push('FizzBuzz')
+        else if (i % 3 === 0) str.push('Fizz');
+        else if (i % 5 === 0) str.push('Buzz');
+        else str.push(i) ;
+        
+    }
+    return str.join('|');
+}
+ console.log(fizzBuzz(13,18));
+ console.log(fizzBuzz(12,5));
+ console.log(fizzBuzz(5,5));
+ console.log(fizzBuzz(9,6));
+
+ // Palindrome
+ const isPalindrome = (str) => str.toLowerCase() === str.toLowerCase().split('').reverse().join('');
+
+ console.log(isPalindrome('Hello'));
+ console.log(isPalindrome('Kayak'));
+ console.log(isPalindrome('civic'));
+ console.log(isPalindrome('abba'));
+ console.log(isPalindrome('ab a'));
+ console.log(isPalindrome('123454321'));
+ console.log(isPalindrome('A'));
+ console.log(isPalindrome(''));
+
+ // Prime Number
+const isPrime = (number) => {
+    if (number <= 1) return false;
+    if (number === 2) return true ;
+    for(let i = 2 ; i < number; i++) {
+        if(number % i === 0) return false;
+        else return true;
+    } 
+}
+console.log(isPrime(5));
+console.log(isPrime(2));
+console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
+
+// Add two arrays
+
+function add(arr1, arr2) {
+    const result = [];
+    const arrLength = Math.max(arr1.length, arr2.length);
+
+    for (let i = 0; i < arrLength; i++) {
+        const sum = (arr1[i] || 0) + (arr2[i] || 0);
+        result.push(sum);
+    }
+
+    return result;
+}
+console.log(add([3,0,0,7,5] , [6,3,2]));
+console.log(add([10,3,6,3,2] , [6,8,3,0,0,7,5,10,34]));
+console.log(add([-5,6,-3,11] , [5,-6,3,-11]));
+
+// No Elements with A
+const noA = (arr) => arr.map( x => x.toLowerCase().startsWith('a') ? '###' : x);
+
+console.log(noA(['javascript', 'hello', '123', 'xyz']));
+console.log(noA(['apple', '123', 'ABC', 'javascript']));
+console.log(noA(['apple', 'abc', 'ABC', 'Alex', 'A']));
+
+// No Elements Divisible by 3 and 5 
+const no3and5 = (array) => {
+    
+    return array.map (x => {
+        if(x % 3 === 0 && x % 5 === 0) return 101;
+        else if(x % 3 === 0) return 100;
+        else if(x % 5 === 0) return 99;
+        else return x;    
+    } 
+) 
+}
+console.log(no3and5([7, 4, 11, 23, 17]));
+console.log(no3and5([3, 4, 5, 6]));
+console.log(no3and5([10, 11, 12, 13, 14, 15]));
+
+// No Elements Equals 13
+
+//Remove Duplicates 
+
+const removeDuplicate = (arr) => [...new Set (arr)];
+
+console.log(removeDuplicate([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicate([1, 2, 5, 2, 3]));
+console.log(removeDuplicate([0, -1, -2, -2, -1]));
+console.log(removeDuplicate(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicate(["1", '2','3', '2', '3']));
