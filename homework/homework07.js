@@ -143,3 +143,39 @@ console.log(categorizeCharacters('abc123$#%'));
 console.log(categorizeCharacters('12ab$%3c%'));
 
 
+function calculateTotalPrice2(items) {
+    const priceList = {
+        "Apple": 2.00,
+        "Orange": 3.29,
+        "Mango": 4.99,
+        "Pineapple": 5.25
+    };
+
+    let totalPrice = 0;
+    let appleCount = 0;
+    let mangoCount = 0;
+
+    for (const item in items) {
+        const quantity = items[item];
+        const price = priceList[item] * quantity;
+
+        if (item === "Apple") {
+            appleCount += quantity;
+            const discountApples = Math.floor(appleCount / 2);
+            totalPrice += price - (discountApples * priceList["Apple"]);
+        } else if (item === "Mango") {
+            mangoCount += quantity;
+            const freeMangoes = Math.floor(mangoCount / 3);
+            totalPrice += price - (freeMangoes * priceList["Mango"]);
+        } else {
+            totalPrice += price;
+        }
+    }
+
+    return totalPrice.toFixed(2);
+}
+
+    console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }));
+    console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }));
+    console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }));
+    console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 }));
