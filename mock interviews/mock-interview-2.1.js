@@ -345,6 +345,12 @@ console.log(no3and5([3, 4, 5, 6]));
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
 // No Elements Equals 13
+const no13 = (arr) => arr.map( x => x === 13 ? 0 : x);
+
+console.log(no13([1, 2, 3, 4]));
+console.log(no13([13, 2, 3]));
+console.log(no13([13, 13, 13, 13, 13]));
+console.log(no13([]));
 
 //Remove Duplicates 
 
@@ -355,3 +361,58 @@ console.log(removeDuplicate([1, 2, 5, 2, 3]));
 console.log(removeDuplicate([0, -1, -2, -2, -1]));
 console.log(removeDuplicate(["abc", "xyz", "123", "ab", "abc", "ABC"]));
 console.log(removeDuplicate(["1", '2','3', '2', '3']));
+
+// No Digits 
+const noDigit = (str) => {
+    let str1 ='';
+    for(const char of str) {
+        if(isNaN(char)) str1+= char;
+        else if(char === ' ') str1+= char;
+    }return str1;
+}
+
+console.log(noDigit(''));
+console.log(noDigit('Javascript'));
+console.log(noDigit('123Hello'));
+console.log(noDigit('123Hello World149'));
+console.log(noDigit('123Tech456Global149'));
+
+// No Vowel
+const noVowel = (str) => {
+    vowels ='aeiou';
+    let str1 = '';
+    for(const char of str) {
+        if(!(vowels.includes(char.toLowerCase()))) str1+= char;
+    }return str1;
+}
+console.log(noVowel('TechGlobal'));
+console.log(noVowel("AEOxyz"));
+console.log(noVowel("Javascript"));
+console.log(noVowel(""));
+console.log(noVowel("$125"));
+
+// Sum of Digits
+const sumOfDigits = (str) => {
+    let sum = 0;
+    for(const char of str) {
+        if(char >= 0 && char <= 9 && char !== " ") sum+= parseInt(char);
+
+    } return sum;
+}
+console.log(sumOfDigits('Javascript'));
+console.log(sumOfDigits("John 29"));
+console.log(sumOfDigits('$125'));
+console.log(sumOfDigits(''));
+
+// Array Factorial 
+const arrFact = (array) => array.map( x => {
+    let sum = 1;
+        for (i = x ; i > 0; i--) {
+        sum *= i
+    }return sum
+} 
+)
+console.log(arrFact([1, 2, 3, 4]));
+console.log(arrFact([0, 5]));
+console.log(arrFact([5, 0, 6]));
+console.log(arrFact([]));
