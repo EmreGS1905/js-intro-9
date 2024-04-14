@@ -1,9 +1,59 @@
 // Task 1
+const calculateTotalPrice1 = (shoppingItems) => {
+    let totalPrice = 0;
+const priceList = {
+    apple: 2.00,
+    orange: 3.29,
+    mango: 4.99,
+    pineapple: 5.25
+};
+
+for (const item in shoppingItems) {
+    if (priceList[item]) {
+        totalPrice += priceList[item] * shoppingItems[item];
+    }
+}
+
+return totalPrice;
+}
+
+console.log(calculateTotalPrice1({ apple: 3, mango: 1 }));
+console.log(calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 }));
+console.log(calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 }));
+console.log(calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango: 1 }));
 
 // Task 2
 
-// Task 3
+const calculateTotalPrice2 = (shoppingItems) => {
+    let total = 0;
+    for (const [key, value] of Object.entries(shoppingItems)) {
+        if (key === 'Apple') {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 0) total += 1;
+                else total += 2;
+            }
+        }
+        if (key === 'Orange') total += value * 3.29;
+        if (key === 'Mango') {
+            for (let i = 1; i <= value; i++) {
+                if (i % 4 !== 0) total += 4.99;
+                else total;
+            }
+        }
+        if (key === 'Pineapple') total += value * 5.25;
+    }
 
+    return total.toFixed(2);
+}
+console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }));
+console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }));
+console.log(calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }));
+console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango: 3 }));
+
+
+
+
+// Task 3
 const nthWord = (str, n) => {
     let word = str.split(' ');
     if (n > word.length) return '';
@@ -30,36 +80,6 @@ console.log(isArmstrong(153));
 console.log(isArmstrong(123));
 console.log(isArmstrong(1634));
 console.log(isArmstrong(1111));
-
-
-
-// Task 5
-function calculateTotalPrice1(items) {
-
-    const priceList = {
-        "Apple": 2.00,
-        "Orange": 3.29,
-        "Mango": 4.99,
-        "Pineapple": 5.25
-
-    };
-
-    let totalPrice = 0;
-    for (const item in items) {
-
-        if (priceList.hasOwnProperty(item)) {
-            const quantity = items[item];
-            totalPrice += priceList[item] * quantity;
-
-        }
-    }
-
-    return totalPrice.toFixed(2);
-}
-console.log(calculateTotalPrice1({ apple: 3, mango: 1 }))
-console.log(calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 }))
-console.log(calculateTotalPrice1({ apple: 0, mango: 0, orange: 0 }))
-console.log(calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango: 1 }))
 
 //Task 5
 
@@ -96,3 +116,4 @@ console.log(splitString('Java', 2));
 console.log(splitString('Automation', 3));
 console.log(splitString('Hello', 6));
 console.log(splitString('12', 1));
+
